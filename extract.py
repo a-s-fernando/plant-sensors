@@ -2,6 +2,8 @@ import requests
 from time import perf_counter
 import pandas as pd
 
+
+
 def get_data() -> list[dict]:
     '''Retrieves plants data'''
 
@@ -69,7 +71,7 @@ def clean_dataframe(df):
     df['recording_taken'] = pd.to_datetime(df['recording_taken'])
     df['last_watered'] = pd.to_datetime(df['last_watered'])
 
-    df = df.rename(columns={'origin_location': 'origin_country'})
+    df = df.rename(columns={'origin_location': 'origin_country', 'cycle': 'plant_cycle'})
 
     df['origin_country'] = df['origin_country'].str[3]
 
@@ -77,7 +79,11 @@ def clean_dataframe(df):
 
     df['origin_country'] = df['origin_country'].replace(countries)
 
+    df = df.drop(['botanist', 'plant_id', 'scientific_name', 'error'], axis=1)
+
     return df
+
+
 
 
 if __name__ == '__main__':

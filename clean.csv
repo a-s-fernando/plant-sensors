@@ -1,0 +1,51 @@
+plant_cycle,last_watered,name,origin_country,recording_taken,soil_moisture,sunlight,temperature,first_name,last_name,email,origin_continent
+Perennial,2023-05-09 14:03:04,Epipremnum Aureum,Brazil,2023-05-09 15:45:08,94.07149973475315,['Part shade'],19.638830884316018,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,SA
+,2023-05-09 13:54:32,Venus flytrap,United States,2023-05-09 15:45:09,93.46721608366141,,12.056133620930222,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,NA
+,2023-05-09 14:10:54,Corpse flower,Nigeria,2023-05-09 15:45:10,94.85313555595997,,9.19544126350055,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,AF
+,2023-05-09 14:50:16,Rafflesia arnoldii,Brazil,2023-05-09 15:45:11,96.8343799346782,,10.04887051252425,Eliza,Andrews,eliza.andrews@lnhm.co.uk,SA
+,2023-05-09 13:16:25,Black bat flower,El Salvador,2023-05-09 15:45:12,91.12580201491053,,11.358552277230508,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,NA
+Herbaceous Perennial,2023-05-09 14:56:18,Pitcher plant,India,2023-05-09 15:45:13,97.22284891769158,['Full sun'],11.232429347598721,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,AS
+Perennial,2023-05-09 13:35:35,Wollemi pine,Canada,2023-05-09 15:45:14,92.7899041278962,['Part shade'],10.997897108121176,Eliza,Andrews,eliza.andrews@lnhm.co.uk,NA
+,,,,,,,,,,,
+Herbaceous Perennial,2023-05-09 13:23:01,Bird of paradise,Ivory Coast,2023-05-09 15:45:15,91.51601340656063,"['Full sun', 'part shade']",11.585513049833907,Eliza,Andrews,eliza.andrews@lnhm.co.uk,AF
+Perennial,2023-05-09 14:12:43,Cactus,Germany,2023-05-09 15:45:16,94.6338627816425,"['Full sun', 'part shade']",10.629779074433118,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,EU
+,2023-05-09 13:04:57,"Dragon tree,",Croatia,2023-05-09 15:45:18,90.72224632401156,,13.976335931452398,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,EU
+Herbaceous Perennial,2023-05-09 13:37:24,Asclepias Curassavica,United States,2023-05-09 15:45:18,92.81367612640449,['Full sun'],9.505608329014207,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,NA
+,2023-05-09 13:13:51,Brugmansia X Candida,United States,2023-05-09 15:45:20,91.07166506188605,,12.871765770631514,Eliza,Andrews,eliza.andrews@lnhm.co.uk,NA
+,2023-05-09 13:36:47,Canna ‘Striata’,Germany,2023-05-09 15:45:21,92.92937235747021,,9.592068862983906,Eliza,Andrews,eliza.andrews@lnhm.co.uk,EU
+Perennial,2023-05-09 14:17:54,Colocasia Esculenta,United States,2023-05-09 15:45:22,95.0629967300094,"['Filtered shade', ' Part sun/part shade']",13.204702682785538,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,NA
+,2023-05-09 13:45:31,Cuphea ‘David Verity’,Tunisia,2023-05-09 15:45:23,92.94893382745099,,10.017840514036214,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,AF
+Perennial,2023-05-09 13:50:40,Euphorbia Cotinifolia,United States,2023-05-09 15:45:24,90.16559107428571,['Full sun'],13.324380012932508,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,NA
+Herbaceous Perennial,2023-05-09 14:02:40,Ipomoea Batatas,Indonesia,2023-05-09 15:45:25,94.02027883802134,['Full sun'],9.828589156232525,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,AS
+,2023-05-09 14:29:39,Manihot Esculenta ‘Variegata’,Germany,2023-05-09 15:45:26,95.58532226699029,,9.101767927934892,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,EU
+Herbaceous Perennial,2023-05-09 13:24:30,Musa Basjoo,Botswana,2023-05-09 15:45:27,92.1182843252563,['Full sun'],13.887070744024532,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,AF
+Herbaceous Perennial,2023-05-09 14:49:34,Salvia Splendens,Spain,2023-05-09 15:45:28,96.72133358748778,"['Full sun', 'part shade']",8.660832827985715,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,EU
+Herbaceous Perennial,2023-05-09 14:23:59,Anthurium,Brazil,2023-05-09 15:45:29,95.35606931528964,['Part shade'],11.065795057956436,Eliza,Andrews,eliza.andrews@lnhm.co.uk,SA
+Herbaceous Perennial,2023-05-09 13:03:26,Bird of Paradise,Germany,2023-05-09 15:45:30,90.52231056530215,"['Full sun', 'part shade']",9.585786006645765,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,EU
+Perennial,2023-05-09 14:56:47,Cordyline Fruticosa,Germany,2023-05-09 15:45:31,97.19373159117083,"['Part shade', 'full shade']",11.471539875331896,Eliza,Andrews,eliza.andrews@lnhm.co.uk,EU
+Perennial,2023-05-09 14:44:00,Ficus,Japan,2023-05-09 15:45:32,96.32625422089552,['Full sun'],13.0926834541998,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,AS
+,2023-05-09 13:58:41,Palm Trees,Sudan,2023-05-09 15:45:33,93.95637992365693,,11.620726437751793,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,AF
+,,,,,,,,,,,
+Herbaceous Perennial,2023-05-09 14:58:20,Spathiphyllum,Ukraine,2023-05-09 15:45:34,97.29795044613918,"['Part shade', 'full shade']",10.791635269927546,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,EU
+Perennial,2023-05-09 14:37:02,Croton,United States,2023-05-09 15:45:35,95.89058911388611,['Part shade'],12.435602717153957,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,NA
+Herbaceous Perennial,2023-05-09 13:11:24,Aloe Vera,Japan,2023-05-09 15:45:36,91.34466481384472,['Full sun'],10.897650649446515,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,AS
+Perennial,2023-05-09 13:55:19,Ficus Elastica,Libya,2023-05-09 15:45:37,93.90553596593001,['Part shade'],14.544415044489812,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,AF
+Herbaceous Perennial,2023-05-09 13:05:43,Sansevieria Trifasciata,China,2023-05-09 15:45:38,90.77339157211539,"['full sun', 'full shade']",13.398394001520062,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,AS
+Perennial,2023-05-09 14:29:54,Philodendron Hederaceum,Germany,2023-05-09 15:45:39,95.48136782107356,"['Filtered shade', ' Full sun only if soil kept moist', ' Part sun/part shade']",10.635662888593727,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,EU
+Perennial,2023-05-09 14:05:58,Schefflera Arboricola,India,2023-05-09 15:45:40,94.19147457864078,['Part sun/part shade'],13.599534175319544,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,AS
+Herbaceous Perennial,2023-05-09 13:44:15,Aglaonema Commutatum,Spain,2023-05-09 15:45:41,92.8978521539961,"['Part shade', 'full shade']",13.453472033338937,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,EU
+Perennial,2023-05-09 13:32:46,Monstera Deliciosa,Chile,2023-05-09 15:45:42,92.12557062092793,"['Full sun only if soil kept moist', ' Part sun/part shade']",12.99269491994323,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,SA
+Herbaceous Perennial,2023-05-09 14:09:55,Tacca Integrifolia,United States,2023-05-09 15:45:43,94.59696529229323,"['Part shade', 'full shade']",12.366115746322563,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,NA
+,2023-05-09 14:23:43,Psychopsis Papilio,India,2023-05-09 15:45:44,95.31251615904762,,11.119396337768602,Eliza,Andrews,eliza.andrews@lnhm.co.uk,AS
+Herbaceous Perennial,2023-05-09 13:46:06,Saintpaulia Ionantha,Tanzania,2023-05-09 15:45:45,93.32106164093024,"['Part shade', 'full shade']",12.941625752421054,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,AF
+Herbaceous Perennial,2023-05-09 14:18:23,Gaillardia,Japan,2023-05-09 15:45:46,94.7822402477612,['Full sun'],13.442863314863255,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,AS
+Perennial,2023-05-09 14:05:38,Amaryllis,France,2023-05-09 15:45:48,94.44543210443624,"['Full sun', 'part shade']",9.146219322734305,Eliza,Andrews,eliza.andrews@lnhm.co.uk,EU
+Perennial,2023-05-09 13:45:13,Caladium Bicolor,India,2023-05-09 15:45:49,93.24990548694029,"['Part shade', 'full shade']",11.821208802694178,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,AS
+Herbaceous Perennial,2023-05-09 14:49:43,Chlorophytum Comosum,Bulgaria,2023-05-09 15:45:50,96.74991261776061,"['Part shade', 'full shade']",9.897115121674638,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,EU
+,,,,,,,,,,,
+Perennial,2023-05-09 13:32:40,Araucaria Heterophylla,Mexico,2023-05-09 15:45:51,92.38197484461392,['Part shade'],9.619766644285793,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,NA
+Herbaceous Perennial,2023-05-09 14:04:23,Begonia,United States,2023-05-09 15:45:52,94.11082426015474,"['Full sun', 'part shade']",9.068742804642213,Gertrude,Jekyll,gertrude.jekyll@lnhm.co.uk,NA
+Perennial,2023-05-09 14:12:39,Medinilla Magnifica,Malawi,2023-05-09 15:45:53,94.84853539410682,['Part shade'],13.371657758359841,Eliza,Andrews,eliza.andrews@lnhm.co.uk,AF
+Perennial,2023-05-09 13:30:18,Calliandra Haematocephala,Italy,2023-05-09 15:45:54,88.37642627857143,['Full sun'],13.371317172818571,Eliza,Andrews,eliza.andrews@lnhm.co.uk,EU
+Herbaceous Perennial,2023-05-09 14:31:09,Zamioculcas Zamiifolia,Philippines,2023-05-09 15:45:55,95.61864208105469,"['Part shade', 'full shade']",14.919636811533676,Carl,Linnaeus,carl.linnaeus@lnhm.co.uk,AS
+Perennial,2023-05-09 14:02:15,Crassula Ovata,Mexico,2023-05-09 15:45:56,93.9537973197279,['full sun'],9.453150434821337,Eliza,Andrews,eliza.andrews@lnhm.co.uk,NA
