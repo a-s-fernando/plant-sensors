@@ -1,4 +1,5 @@
 import requests
+from time import perf_counter
 import pandas as pd
 
 def get_data() -> list[dict]:
@@ -80,6 +81,9 @@ def clean_dataframe(df):
 
 
 if __name__ == '__main__':
-
+    t1_start = perf_counter()
     df = get_dataframe()
     print(clean_dataframe(df))
+    t1_stop = perf_counter()
+    print("Elapsed time during the whole program in seconds:",
+                                            t1_stop-t1_start)
