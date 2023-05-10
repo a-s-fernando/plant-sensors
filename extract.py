@@ -79,7 +79,7 @@ def clean_dataframe(df):
 
     df['origin_country'] = df['origin_country'].replace(countries)
 
-    df = df.drop(['botanist', 'plant_id', 'scientific_name', 'error'], axis=1)
+    df = df.drop(['botanist', 'scientific_name', 'error'], axis=1)
 
     return df
 

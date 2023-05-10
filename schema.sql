@@ -1,10 +1,9 @@
-DROP TABLE IF EXISTS sunlight_at_record;
+DROP TABLE IF EXISTS sunlight_for_plant;
 DROP TABLE IF EXISTS record;
 DROP TABLE IF EXISTS sunlight_value;
 DROP TABLE IF EXISTS botanist;
 DROP TABLE IF EXISTS plant;
 DROP TABLE IF EXISTS plant_cycle;
-DROP TABLE IF EXISTS sunlight_at_record;
 DROP TABLE IF EXISTS country;
 DROP TABLE IF EXISTS continent;
 
@@ -67,9 +66,9 @@ CREATE TABLE IF NOT EXISTS record(
 );
 
 CREATE TABLE IF NOT EXISTS sunlight_for_plant(
-	plant_id INT NOT NULL,
+	pLant_id INT NOT NULL,
 	sunlight_id INT NOT NULL,
-	UNIQUE (sunlight_id, record_id),
-	FOREIGN KEY (record_id) REFERENCES record(record_id),
+	UNIQUE (sunlight_id, plant_id),
+	FOREIGN KEY (plant_id) REFERENCES plant(plant_id),
 	FOREIGN KEY (sunlight_id) REFERENCES sunlight_value(sunlight_id)
 );

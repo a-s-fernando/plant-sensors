@@ -7,11 +7,6 @@ from database_connection import get_db_connection
 from dotenv import load_dotenv #remove before dockerising
 import pandas as pd
 
-# Go through row by row of df using iter rows
-
-# Fill sub-tables
-
-# Check if exists, if not insert, else get id
 
 def load_continents(record, cur) -> int:
     continent = record['origin_continent']
@@ -83,6 +78,9 @@ def load_botanist(record, cur) -> int:
 
 def load_sunlight_value(value, cur) -> int:
     value = str(value).lower().strip()
+    # quick hack for fixing dodgy sunlight
+    if value == "part sun/part shade":
+        value = "part shade"
     cur.execute("SELECT * FROM sunlight_value WHERE value = %s", (value,))
     result = cur.fetchone()
     if result:
@@ -92,6 +90,19 @@ def load_sunlight_value(value, cur) -> int:
                     (value,))
         id = cur.fetchone()['sunlight_id']
     return id
+
+
+def load_record(record, cur, botanist_id, plant_id):
+    recording_taken = record['recording_taken']
+    last_watered = record['last_watered']
+    soil_moisture = record['soil_moisture']
+    temperature = record['temperature']
+    cur.execute('INSERT INTO record (recording_taken, botanist_id, plant_id, last_watered, soil_moisture, temperature) VALUES (%s,%s,%s,%s,%s,%s)',
+                (recording_taken, botanist_id, plant_id, last_watered, soil_moisture, temperature,))
+
+
+def load_sunlight_plant_link(cur, sunlight_id, plant_id):
+    cur.execute("INSERT INTO sunlight_for_plant (plant_id, sunlight_id) VALUES (%s, %s) ON CONFLICT DO NOTHING", (plant_id, sunlight_id,))
 
 
 if __name__ == '__main__':
@@ -107,11 +118,13 @@ if __name__ == '__main__':
     with get_db_connection(config) as conn, conn.cursor() as cur:
         for row in df.to_dict(orient="records"):
 
-            # Check if failure or 7 if so continue
+            # Check if valid input, if not continue
             if not (isinstance(row['name'], str) and row['name'] != 'NaN'):
+                print("Couldn't get plant data for: "+str(row['plant_id']))
                 continue
             if row['name'] == '':
                 continue
+
 
             continent_id = load_continents(row, cur)
             country_id = load_countries(continent_id, row, cur)
@@ -123,10 +136,14 @@ if __name__ == '__main__':
 
             if not isinstance(row['sunlight'], float):
                 for sunlight_value in row['sunlight']:
-                    load_sunlight_value(sunlight_value, cur)
+                    sunlight_id = load_sunlight_value(sunlight_value, cur)
+            
+            load_record(row, cur, botanist_id, plant_id)
+            load_sunlight_plant_link(cur, sunlight_id, plant_id)
+            
             
         conn.commit()
 
     t1_stop = perf_counter()
-    print("Elapsed time during the whole program in seconds:",
+    print("Time taken to extract, transform and load data:",
                                             t1_stop-t1_start)
