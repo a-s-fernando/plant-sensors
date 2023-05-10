@@ -1,11 +1,11 @@
 import os
 import pandas as pd
-from dotenv import load_dotenv
 from sqlalchemy import create_engine, URL, text
+import s3fs
 
-load_dotenv('./.env')
 
-if __name__ == "__main__":
+def handler(event, context):
+    """lambda handler function to move data from rds to csv and store in s3"""
     url_object_one = URL.create(
         "postgresql+psycopg2",
         username=os.environ['DB_USER'],
@@ -18,24 +18,34 @@ if __name__ == "__main__":
     engine_one = create_engine(url_object_one)
 
 
-    table_names = ["continent","country","plant_cycle","plant","botanist", "sunlight_value", "record", "sunlight_for_plant"]
+    table_names = ["continent","country","plant_cycle","plant","botanist",
+                   "sunlight_value", "record", "sunlight_for_plant"]
+    s3 = s3fs.S3FileSystem(anon=False, key=os.environ['ACCESS_KEY'], secret=os.environ['SECRET_KEY'])
+
     for table_name in table_names:
         df = pd.read_sql_table(table_name=table_name,con=engine_one)
-        # Download from S3 to tmp here TODO
+        print("Accessing S3...")
         try:
-            pd.read_csv(f'./tmp/{table_name}.csv')\
+            with s3.open(f"c7-aaa-s3-bucket/{table_name}.csv", mode='r') as s3_file, open(f"/tmp/{table_name}.csv", mode='w') as file:
+                file.write(s3_file.read())
+            pd.read_csv(f'/tmp/{table_name}.csv')\
                 ._append(df).drop_duplicates()\
-                    .to_csv(f'./tmp/{table_name}.csv')
-        except FileNotFoundError:
-            df.to_csv(f'./tmp/{table_name}.csv')
+                    .to_csv(f'/tmp/{table_name}.csv')
+            with s3.open(f"c7-aaa-s3-bucket/{table_name}.csv", mode='w') as s3_file, open(f"/tmp/{table_name}.csv", mode='r') as file:
+                s3_file.write(file.read())
+                print("Appended to csv.")
+
+        except Exception:
+            df.to_csv(f'/tmp/{table_name}.csv')
+            with s3.open(f"c7-aaa-s3-bucket/{table_name}.csv", mode='w') as s3_file, open(f"/tmp/{table_name}.csv", mode='r') as file:
+                s3_file.write(file.read())
+                print("Created csv.")
+
     with engine_one.connect() as con:
-        statement = text(
-            """
-            DELETE FROM record
-            """
-        )
+        statement = text("DELETE FROM record")
         con.execute(statement)
         con.commit()
-    
-    # Now erase records table from the SQL database
+        print("Deleted records.")
 
+if __name__ == "__main__":
+    handler(None, None)
