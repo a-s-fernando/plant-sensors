@@ -112,7 +112,6 @@ if __name__ == '__main__':
 
     df = get_dataframe()
     df = clean_dataframe(df)
-    #df = pd.read_csv('./clean.csv', na_filter=False) # remove me later TODO
 
 
     with get_db_connection(config) as conn, conn.cursor() as cur:

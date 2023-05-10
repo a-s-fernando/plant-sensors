@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS record(
 );
 
 CREATE TABLE IF NOT EXISTS sunlight_for_plant(
-	pLant_id INT NOT NULL,
+	plant_id INT NOT NULL,
 	sunlight_id INT NOT NULL,
 	UNIQUE (sunlight_id, plant_id),
 	FOREIGN KEY (plant_id) REFERENCES plant(plant_id),
