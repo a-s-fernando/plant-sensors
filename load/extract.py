@@ -1,23 +1,22 @@
+"""contains api extract and transformation functions"""
 import requests
-from time import perf_counter
 import pandas as pd
 
 
-
 def get_data() -> list[dict]:
-    '''Retrieves plants data'''
+    """Retrieves plants data"""
 
     data = []
     for i in range(50):
         url = f'https://data-eng-plants-api.herokuapp.com/plants/{i}'
         response = requests.get(url)
         data.append(response.json())
-    
+
     return data
 
 
 def get_countries():
-    '''Retrieves dict for country codes mapping.'''
+    """Retrieves dict for country codes mapping."""
 
     url = 'http://country.io/names.json'
     response = requests.get(url)
@@ -27,7 +26,7 @@ def get_countries():
 
 
 def get_continents():
-    '''Retrieves dict for continent codes mapping.'''
+    """Retrieves dict for continent codes mapping."""
 
     url = 'http://country.io/continent.json'
     response = requests.get(url)
@@ -37,7 +36,7 @@ def get_continents():
 
 
 def get_dataframe():
-    '''Load data into pandas dataframe'''
+    """Load data into pandas dataframe"""
 
     data = get_data()
     df = pd.DataFrame(data)
@@ -46,7 +45,7 @@ def get_dataframe():
 
 
 def split_names(x):
-    '''split first and last names'''
+    """split first and last names"""
 
     if isinstance(x, dict):
         # print(x['name'], len(x['name'].split(' ')))
@@ -55,8 +54,8 @@ def split_names(x):
         return [None, None]
 
 
-def clean_dataframe(df): 
-    '''Clean up dataframe'''
+def clean_dataframe(df):
+    """Clean up dataframe"""
 
     countries = get_countries()
     continents = get_continents()
@@ -82,14 +81,3 @@ def clean_dataframe(df):
     df = df.drop(['botanist', 'scientific_name', 'error'], axis=1)
 
     return df
-
-
-
-
-if __name__ == '__main__':
-    t1_start = perf_counter()
-    df = get_dataframe()
-    print(clean_dataframe(df))
-    t1_stop = perf_counter()
-    print("Elapsed time during the whole program in seconds:",
-                                            t1_stop-t1_start)
