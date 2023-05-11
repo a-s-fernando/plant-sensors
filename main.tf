@@ -67,6 +67,7 @@ resource "aws_s3_bucket" "c7-aaa-s3-bucket" {
   bucket = "c7-aaa-s3-bucket"
 }
 
+# Creata lambda IAM policy
 data "aws_iam_policy_document" "assume_role" {
   statement {
     effect = "Allow"
@@ -80,6 +81,7 @@ data "aws_iam_policy_document" "assume_role" {
   }
 }
 
+# Creata lambda IAM role
 resource "aws_iam_role" "lambda-role" {
   name_prefix = "iam-aaa-for-lambda"
   #  = "iam-aaa-for-lambda"
