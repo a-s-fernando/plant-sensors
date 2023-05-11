@@ -161,4 +161,3 @@ cython_debug/
 transfer/tmp
 terraform*
 terraform.tfvars
-.terraform*
