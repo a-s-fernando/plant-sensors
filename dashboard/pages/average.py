@@ -22,7 +22,7 @@ register_page(__name__, title="", path='/averages')
 layout = dbc.Container([
     html.H3("Daily Averages"),
     html.P("Select a plant:"),
-    dcc.Dropdown(id='select', options=[{"label": plant, "value": plant}
+    dbc.Select(id='select', options=[{"label": plant, "value": plant}
                for plant in grouped_moisture["name"].unique()]),
     dcc.Graph(id="average_moisture"),
     dcc.Graph(id="average_temperature"),

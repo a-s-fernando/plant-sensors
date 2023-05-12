@@ -4,3 +4,4 @@ plotly
 s3fs
 python-dotenv
 matplotlib
+dash-bootstrap-components

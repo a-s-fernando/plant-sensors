@@ -1,24 +1,28 @@
 from dash import Dash, html, dcc, page_container, page_registry
+import dash_bootstrap_components as dbc
 import matplotlib.pyplot as plt
 
 
 plt.switch_backend('Agg')
 
-app = Dash(__name__, use_pages=True)
+app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP], use_pages=True)
 
-app.layout = html.Div([
-    html.H1('Plant Sensor Dashboard'),
+navbar = dbc.NavbarSimple(
+    children=[
+        dbc.DropdownMenu(
+            children=[
+                dbc.DropdownMenuItem(page['name'], href=page['relative_path'])
+                for page in page_registry.values()
+            ],
+            nav=True,
+            in_navbar=True,
+            label="Pages",
+        ),
+    ],
+    brand="Plant-Sensors",
+    color="#74B72E",
+)
 
-    html.Div(
-        [
-            html.Div(
-                dcc.Link(
-                    f"{page['name']} - {page['path']}", href=page["relative_path"]
-                )
-            )
-            for page in page_registry.values()
-        ]
-    ),
-
-    page_container
-])
+app.layout = dbc.Container([navbar,
+                            page_container,
+                            ])
