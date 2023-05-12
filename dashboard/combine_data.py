@@ -29,3 +29,7 @@ def get_combined_sunlight():
     combined_sunlight_df = pd.merge(sunlight_for_plant_df, sunlight_value_df, left_on="sunlight_id", right_on="sunlight_id", how="left")
     return combined_sunlight_df.rename(columns={"value": "sunlight"}).drop("sunlight_id", axis=1)
     # Leaving this as separate from the main plants df to avoid duplicates
+
+
+if __name__ == "__main__":
+    print(get_comprehensive_plants())
