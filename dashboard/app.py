@@ -12,7 +12,9 @@ app.layout = html.Div([
     html.Div(
         [
             html.Div(
-                
+                dcc.Link(
+                    f"{page['name']} - {page['path']}", href=page["relative_path"]
+                )
             )
             for page in page_registry.values()
         ]
