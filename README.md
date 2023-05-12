@@ -3,7 +3,7 @@
 Repository for the SigmaLabsXYZ LMNH plant sensors project. This repository allows users to build a database pipeline to store plant data from the Liverpool Natural History Museum's Plant API.
 
 🌿[LMNH Plant API](https://data-eng-plants-api.herokuapp.com/)🌵
-_Use the endpoint **/plants/{plant_id}** to find a plant by it's **plant_id**._
+_Use the endpoint **/plants/{plant_id}** to find a plant by its **plant_id**._
 
 ## Table of Contents
 
@@ -12,7 +12,7 @@ _Use the endpoint **/plants/{plant_id}** to find a plant by it's **plant_id**._
 - [Usage](#usage) 🪴
 - [The Data](#the-data) 🌿
 - [The Architecture](#the-architecture) 🌲
-- [License](#license) 🍂
+- [Licenses](#licenses) 🍂
 
 <br>
 
