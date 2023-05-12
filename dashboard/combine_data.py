@@ -1,6 +1,7 @@
 import pandas as pd
 
-def get_comprehensive_plants():
+def get_comprehensive_records() -> pd.DataFrame:
+    """Return a comprehensive dataframe containing all plant and record relevant data."""
     plant_df = pd.read_csv('data/c7-aaa-s3-bucket/plant.csv')
     plant_cycle_df = pd.read_csv('data/c7-aaa-s3-bucket/plant_cycle.csv')
 
@@ -20,10 +21,12 @@ def get_comprehensive_plants():
     botanist_df = pd.read_csv('data/c7-aaa-s3-bucket/botanist.csv')
     records_with_botanists_df = pd.merge(record_df, botanist_df, left_on="botanist_id", right_on="botanist_id", how="left")
     records_with_botanists_df = records_with_botanists_df.drop("botanist_id", axis=1).rename(columns={"first_name":"botanist_fn","last_name":"botanist_ln","email":"botanist_email"})
-
+    records_with_botanists_df['recording_taken'] = pd.to_datetime(records_with_botanists_df['recording_taken'])
+    records_with_botanists_df['last_watered'] = pd.to_datetime(records_with_botanists_df['last_watered'])
     return pd.merge(records_with_botanists_df, plants_and_country_df, how="inner", left_on="plant_id", right_on="plant_id")
 
-def get_combined_sunlight():
+def get_combined_sunlight() -> pd.DataFrame:
+    """Return a dataframe of the sunlight values per plant."""
     sunlight_for_plant_df = pd.read_csv('data/c7-aaa-s3-bucket/sunlight_for_plant.csv')
     sunlight_value_df = pd.read_csv('data/c7-aaa-s3-bucket/sunlight_value.csv')
     combined_sunlight_df = pd.merge(sunlight_for_plant_df, sunlight_value_df, left_on="sunlight_id", right_on="sunlight_id", how="left")
