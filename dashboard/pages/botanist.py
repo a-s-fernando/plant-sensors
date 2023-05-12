@@ -1,16 +1,17 @@
 from datetime import datetime,date
 from dash import html, dcc, register_page, callback, Input, Output
+import dash_bootstrap_components as dbc
 import pandas as pd
 import plotly.express as px
 
-from combine_data import get_comprehensive_plants
+from combine_data import get_comprehensive_records
 
 register_page(__name__, path='/botanist')
 
-botanist_df = get_comprehensive_plants()
+botanist_df = get_comprehensive_records()
 botanist_df['last_watered'] = pd.to_datetime(botanist_df['last_watered'])
 
-layout = html.Section([
+layout = dbc.Container([
                         dcc.DatePickerRange(id='my-date-picker-range',
                                              initial_visible_month=date(2023, 5, 10)),
                         html.Div(id='Line Graph')
