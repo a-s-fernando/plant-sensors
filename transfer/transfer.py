@@ -28,15 +28,15 @@ def handler(event, context):
         try:
             with s3.open(f"c7-aaa-s3-bucket/{table_name}.csv", mode='r') as s3_file, open(f"/tmp/{table_name}.csv", mode='w') as file:
                 file.write(s3_file.read())
-            pd.read_csv(f'/tmp/{table_name}.csv')\
+            pd.read_csv(f'/tmp/{table_name}.csv', keep_default_na=False, index=False)\
                 ._append(df).drop_duplicates()\
-                    .to_csv(f'/tmp/{table_name}.csv')
+                    .to_csv(f'/tmp/{table_name}.csv', index=False)
             with s3.open(f"c7-aaa-s3-bucket/{table_name}.csv", mode='w') as s3_file, open(f"/tmp/{table_name}.csv", mode='r') as file:
                 s3_file.write(file.read())
                 print("Appended to csv.")
 
         except Exception:
-            df.to_csv(f'/tmp/{table_name}.csv')
+            df.to_csv(f'/tmp/{table_name}.csv', index=False)
             with s3.open(f"c7-aaa-s3-bucket/{table_name}.csv", mode='w') as s3_file, open(f"/tmp/{table_name}.csv", mode='r') as file:
                 s3_file.write(file.read())
                 print("Created csv.")
