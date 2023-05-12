@@ -12,7 +12,7 @@ _Use the endpoint **/plants/{plant_id}** to find a plant by it's **plant_id**._
 - [Usage](#usage) 🪴
 - [The Data](#the-data) 🌿
 - [The Architecture](#the-architecture) 🌲
-- [License](#license) 🍂
+- [License](#licenses) 🍂
 
 <br>
 
